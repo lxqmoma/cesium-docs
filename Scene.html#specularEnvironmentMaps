@@ -1,0 +1,8495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scene - Cesium Documentation</title>
+
+    <!--[if lt IE 9]>
+      <script src="javascript/html5.js"></script>
+    <![endif]-->
+    <link href="styles/jsdoc-default.css" rel="stylesheet">
+    <link href="styles/prism.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">
+        <a href="index.html"><img src="Images/CesiumLogo.png" class="cesiumLogo"></a>
+        Scene
+        <div class="titleCenterer"></div>
+    </h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+    <div class="nameContainer">
+    <h4 class="name" id="Scene">
+        <a href="#Scene" class="doc-link"></a>
+        new Cesium.Scene<span class="signature">(<span class="optional">options</span>)</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L143">Scene/Scene.js 143</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    所有三维图形对象的容器和Cesium虚拟场景中的状态。 
+通常场景不是直接创建的，而是由<a href="CesiumWidget.html"><code>CesiumWidget</code></a>创建。
+<p><em><code>contextOptions</code> 参数细节：</em></p>
+<p>
+默认值为:
+<code>
+{
+  webgl : {
+    alpha : false,
+    depth : true,
+    stencil : false,
+    antialias : true,
+    premultipliedAlpha : true,
+    preserveDrawingBuffer : false,
+    failIfMajorPerformanceCaveat : false
+  },
+  allowTextureFilterAnisotropic : true
+}
+</code>
+</p>
+<p><code>webgl</code> 属性对应 <a href="http://www.khronos.org/registry/webgl/specs/latest/#5.2">WebGLContextAttributes</a> 对象，用于创建WebGL上下文。</p>
+<p><code>webgl.alpha</code> 默认值为false，与标准的WebGL默认值true相比，这可以提高性能。
+     如果应用程序需要使用alpha混合将Cesium合成在其他HTML元素之上，设置<code>webgl.alpha</code> 为 true。</p>
+<p>其它的 <code>webgl</code> 属性与WebGL默认值<a href="http://www.khronos.org/registry/webgl/specs/latest/#5.2">WebGLContextAttributes</a>匹配。</p>
+<p><code>allowTextureFilterAnisotropic</code>默认值为true, 当支持WebGL扩展时，它支持各向异性纹理过滤。
+     将此设置为false将提高性能，但会损害视觉质量，特别是对于水平视图。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                具有下列属性的对象：
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>canvas</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Canvas</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                用于创建场景的HTML canvas元素。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contextOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                上下文和WebGL属性，详细信息参见上面。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>creditContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                显示版权的HTML元素。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>creditViewport</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                将在其中显示版权的弹出窗口的HTML元素。如果没有指定viewport将作为canvas的同级添加。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mapProjection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="MapProjection.html">MapProjection</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">new GeographicProjection()</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                在2D和Columbus View模式下使用的地图投影。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>orderIndependentTranslucency</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">true</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                如果为true并且配置支持，则使用与顺序无关的半透明性。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scene3DOnly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">false</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                如果为true则为3D模式优化内存使用和性能，但是禁止使用2D和Columbus View模式。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>terrainExaggeration</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">1.0</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                地形夸张系数。（注意的是地形夸张不会影响到其它图元，因为它们是相对于椭球体）</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shadows</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">false</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                确定阴影是不是来自于太阳照射。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mapMode2D</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="MapMode2D.html">MapMode2D</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">MapMode2D.INFINITE_SCROLL</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                确定二维地图是可以旋转（MapMode2D.ROTATE）还是可以在水平方向无限滚动（MapMode2D.INFINITE_SCROLL）。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>requestRenderMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">false</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                如果为true，则只在场景变化时渲染帧，开启可以提高程序性能，但是需要使用 <a href="Scene.html#requestRender"><code>Scene#requestRender</code></a> 去创建渲染新的一帧，在很多情况下这是必要的（比如在API的其它部分对场景进行更改后）。
+     详细情况参考 <a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a>。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maximumRenderTimeChange</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">0.0</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                如果requestRenderMode为true，则此值定义在请求渲染之前允许的最大仿真时间更改。
+     详细情况参考 <a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a>。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: options 和 options.canvas 是必须的.
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">// 创建没有各向异性纹理过滤的场景
+var scene = new Cesium.Scene({
+  canvas : canvas,
+  contextOptions : {
+    allowTextureFilterAnisotropic : false
+  }
+});</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="CesiumWidget.html">CesiumWidget</a></li>
+    
+        <li><a href="http://www.khronos.org/registry/webgl/specs/latest/#5.2">WebGLContextAttributes</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="_preUpdate">
+    <a href="#_preUpdate" class="doc-link"></a>
+    _preUpdate<span class="type-signature"></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L212">Scene/Scene.js 212</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    渲染前更新事件
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="_renderError">
+    <a href="#_renderError" class="doc-link"></a>
+    _renderError<span class="type-signature"></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L215">Scene/Scene.js 215</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    渲染出错事件
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="backgroundColor">
+    <a href="#backgroundColor" class="doc-link"></a>
+    backgroundColor<span class="type-signature"> : <a href="Color.html">Color</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L302">Scene/Scene.js 302</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    在没有设置天空盒<a href="Scene.html#skyBox"><code>Scene#skyBox</code></a>时的背景颜色.
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript"><a href="Color.html#.BLACK"><code>Color.BLACK</code></a></code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#skyBox">Scene#skyBox</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="camera">
+    <a href="#camera" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>camera<span class="type-signature"> : <a href="Camera.html">Camera</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L877">Scene/Scene.js 877</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取或者设置相机。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="canvas">
+    <a href="#canvas" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>canvas<span class="type-signature"> : Canvas</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L682">Scene/Scene.js 682</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取该场景绑定的canvas元素。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="clampToHeightSupported">
+    <a href="#clampToHeightSupported" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>clampToHeightSupported<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L789">Scene/Scene.js 789</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    如果支持<a href="Scene.html#clampToHeight"><code>Scene#clampToHeight</code></a> 和 <a href="Scene.html#clampToHeightMostDetailed"><code>Scene#clampToHeightMostDetailed</code></a>功能，则返回<code>true</code>。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#clampToHeight">Scene#clampToHeight</a></li>
+    
+        <li><a href="Scene.html#clampToHeightMostDetailed">Scene#clampToHeightMostDetailed</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="completeMorphOnUserInput">
+    <a href="#completeMorphOnUserInput" class="doc-link"></a>
+    completeMorphOnUserInput<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L235">Scene/Scene.js 235</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    决定是否立即完成用户输入的场景转换动画。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">true</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugCommandFilter">
+    <a href="#debugCommandFilter" class="doc-link"></a>
+    debugCommandFilter<span class="type-signature"> : function</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L372">Scene/Scene.js 372</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    该属性仅用于调试；不用于生产。
+<p>决定执行什么命令的函数。如下例所示，该函数将接收命令的 <code>owner</code> 作为参数，并返回一个布尔值，指示是否命令应该被执行。</p>
+<p>默认值为 <code>undefined</code> ，表示所有命令均已执行。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">undefined</code>
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">// 不执行任何命令。
+scene.debugCommandFilter = function(command) {
+    return false;
+};
+
+// 只执行布告牌的命令。也就是说，只画布告牌。
+var billboards = new Cesium.BillboardCollection();
+scene.debugCommandFilter = function(command) {
+    return command.owner === billboards;
+};</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugFrustumStatistics">
+    <a href="#debugFrustumStatistics" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>debugFrustumStatistics<span class="type-signature"> : Object</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1205">Scene/Scene.js 1205</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    此属性仅用于调试；它不用于生产。
+<p>
+当<code>Scene.debugShowFrustums</code> <code>true</code>时，它包含关于每个视锥执行命令数量的统计信息。
+<code>totalCommands</code>是执行的命令总数，忽略重叠部分。
+<code>commandsInFrustums</code>是一个数组，其中包含命令冗余执行的次数，例如，有多少命令与两个或三个视锥重叠。
+</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">undefined</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugShowCommands">
+    <a href="#debugShowCommands" class="doc-link"></a>
+    debugShowCommands<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L382">Scene/Scene.js 382</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    该属性仅用于调试。
+<p>当<code>true</code>时，命令被随机着色（shaded）。这对于性能分析非常有用，可以看到场景或模型的哪些部分是命令密集型的，并且可以从批处理中受益。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugShowDepthFrustum">
+    <a href="#debugShowDepthFrustum" class="doc-link"></a>
+    debugShowDepthFrustum<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L424">Scene/Scene.js 424</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    该属性仅用于调试。
+<p>指示哪个视锥将显示深度信息。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">1</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugShowFramesPerSecond">
+    <a href="#debugShowFramesPerSecond" class="doc-link"></a>
+    debugShowFramesPerSecond<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L404">Scene/Scene.js 404</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    该属性仅用于调试。
+<p>显示每秒的帧数和帧之间的时间。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugShowFrustumPlanes">
+    <a href="#debugShowFrustumPlanes" class="doc-link"></a>
+    debugShowFrustumPlanes<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L434">Scene/Scene.js 434</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    该属性仅用于调试。
+<p>当<code>true</code>时，绘制轮廓以显示相机视锥的边界。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugShowFrustums">
+    <a href="#debugShowFrustums" class="doc-link"></a>
+    debugShowFrustums<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L394">Scene/Scene.js 394</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    该属性仅用于调试。
+<p>当<code>true</code>时，命令将基于它们重叠的视锥被着色（shaded）。
+在最近的视锥中的命令是红色的，在第二近的视锥中的命令是绿色的，在最远的视锥中的命令是蓝色的。
+如果一个命令与多个视锥重叠，则颜色分量将被组合，例如，与前两个视锥重叠的命令将被着色为黄色。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="debugShowGlobeDepth">
+    <a href="#debugShowGlobeDepth" class="doc-link"></a>
+    debugShowGlobeDepth<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L414">Scene/Scene.js 414</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    该属性仅用于调试。
+<p>显示指定视锥的深度信息。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="drawingBufferHeight">
+    <a href="#drawingBufferHeight" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>drawingBufferHeight<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L697">Scene/Scene.js 697</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    底层GL上下文的drawingBufferHeight。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://www.khronos.org/registry/webgl/specs/1.0/#DOM-WebGLRenderingContext-drawingBufferHeight">drawingBufferHeight</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="drawingBufferWidth">
+    <a href="#drawingBufferWidth" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>drawingBufferWidth<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L712">Scene/Scene.js 712</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    底层GL上下文的drawingBufferWidth。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://www.khronos.org/registry/webgl/specs/1.0/#DOM-WebGLRenderingContext-drawingBufferHeight">drawingBufferHeight</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="eyeSeparation">
+    <a href="#eyeSeparation" class="doc-link"></a>
+    eyeSeparation<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L522">Scene/Scene.js 522</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    使用cardboard或WebVR时的眼距，以米为单位。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="farToNearRatio">
+    <a href="#farToNearRatio" class="doc-link"></a>
+    farToNearRatio<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L327">Scene/Scene.js 327</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    使用正常深度缓冲时，多视锥（multi-frustum）的远近比。
+<p>
+该值用于为多视锥的每个视锥创建近和远值。它只用于当 <a href="Scene.html#logarithmicDepthBuffer"><code>Scene#logarithmicDepthBuffer</code></a> 设置为 <code>false</code>时。
+当 <code>logarithmicDepthBuffer</code> 为<code>true</code>时，使用 <a href="Scene.html#logarithmicDepthFarToNearRatio"><code>Scene#logarithmicDepthFarToNearRatio</code></a>。
+</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">1000.0</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="focalLength">
+    <a href="#focalLength" class="doc-link"></a>
+    focalLength<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L516">Scene/Scene.js 516</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    使用cardboard或WebVR时的焦距。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="fog">
+    <a href="#fog" class="doc-link"></a>
+    fog<span class="type-signature"> : <a href="Fog.html">Fog</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L478">Scene/Scene.js 478</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    雾。将大气与远离摄像机的几何体融合在一起，以获取地平线视图。允许额外通过减少几何图形和分配较少的地形请求来提高性能。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="gamma">
+    <a href="#gamma" class="doc-link"></a>
+    gamma<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1424">Scene/Scene.js 1424</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    用于伽玛校正的值。仅在具有高动态范围的渲染时使用。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">2.2</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="globe">
+    <a href="#globe" class="doc-link"></a>
+    globe<span class="type-signature"> : <a href="Globe.html">Globe</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L831">Scene/Scene.js 831</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取或设置深度测试椭球体。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="groundPrimitives">
+    <a href="#groundPrimitives" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>groundPrimitives<span class="type-signature"> : <a href="PrimitiveCollection.html">PrimitiveCollection</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L864">Scene/Scene.js 864</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取贴地图元的集合。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="highDynamicRange">
+    <a href="#highDynamicRange" class="doc-link"></a>
+    highDynamicRange<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1439">Scene/Scene.js 1439</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    是否使用高动态范围渲染。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">true</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="highDynamicRangeSupported">
+    <a href="#highDynamicRangeSupported" class="doc-link"></a>
+    highDynamicRangeSupported<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1457">Scene/Scene.js 1457</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    是否支持高动态范围渲染。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">true</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="id">
+    <a href="#id" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>id<span class="type-signature"> : String</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1241">Scene/Scene.js 1241</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取此场景的唯一标识符。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="imageryLayers">
+    <a href="#imageryLayers" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>imageryLayers<span class="type-signature"> : <a href="ImageryLayerCollection.html">ImageryLayerCollection</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1031">Scene/Scene.js 1031</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取将在地球上渲染的图像图层的集合。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="imagerySplitPosition">
+    <a href="#imagerySplitPosition" class="doc-link"></a>
+    imagerySplitPosition<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1368">Scene/Scene.js 1368</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取或设置图像拆分器在视口中的位置，有效值介于0.0和1.0之间。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="invertClassification">
+    <a href="#invertClassification" class="doc-link"></a>
+    invertClassification<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L498">Scene/Scene.js 498</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    当 <code>false</code>时, 3D Tiles 正常渲染。当 <code>true</code>时，分类的3D Tile几何形状将正常渲染，
+未分类的3D Tile几何体将使用 <a href="Scene.html#invertClassificationColor"><code>Scene#invertClassificationColor</code></a>乘以颜色进行渲染。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="invertClassificationColor">
+    <a href="#invertClassificationColor" class="doc-link"></a>
+    invertClassificationColor<span class="type-signature"> : <a href="Color.html">Color</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L507">Scene/Scene.js 507</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    当<a href="Scene.html#invertClassification"><code>Scene#invertClassification</code></a> 为 <code>true</code>时，未分类的3D Tile几何体的高亮显示颜色。
+<p>当alpha小于1.0时, 3D Tiles的未分类部分将无法与3D Tiles的分类位置正确融合。</p>
+<p>另外，当alpha小于1.0时，必须支持WEBGL_depth_texture 和 EXT_frag_depth WebGL 扩展。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">Color.WHITE</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="invertClassificationSupported">
+    <a href="#invertClassificationSupported" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>invertClassificationSupported<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L804">Scene/Scene.js 804</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    如果支持<a href="Scene.html#invertClassification"><code>Scene#invertClassification</code></a>功能，则返回<code>true</code>。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#invertClassification">Scene#invertClassification</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="lastRenderTime">
+    <a href="#lastRenderTime" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>lastRenderTime<span class="type-signature"> : <a href="JulianDate.html">JulianDate</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1173">Scene/Scene.js 1173</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取最后一次渲染场景时的模拟时间。如果场景尚未渲染，则返回undefined。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="logarithmicDepthBuffer">
+    <a href="#logarithmicDepthBuffer" class="doc-link"></a>
+    logarithmicDepthBuffer<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1404">Scene/Scene.js 1404</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    是否使用对数深度缓冲区。启用此选项将减少多视锥中的视锥，提高性能。此属性依赖于受支持的fragmentDepth。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="logarithmicDepthFarToNearRatio">
+    <a href="#logarithmicDepthFarToNearRatio" class="doc-link"></a>
+    logarithmicDepthFarToNearRatio<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L339">Scene/Scene.js 339</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    使用对数深度缓冲时，多视锥（multi-frustum）的远近比。
+<p>
+该值用于为多视锥的每个视锥创建近和远值。它只用于当 <a href="Scene.html#logarithmicDepthBuffer"><code>Scene#logarithmicDepthBuffer</code></a> 设置为 <code>true</code>时。
+当<code>logarithmicDepthBuffer</code> 为<code>false</code>时, 使用 <a href="Scene.html#farToNearRatio"><code>Scene#farToNearRatio</code></a>.
+</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">1e9</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="mapMode2D">
+    <a href="#mapMode2D" class="doc-link"></a>
+    mapMode2D<span class="type-signature"> : <a href="MapMode2D.html">MapMode2D</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1356">Scene/Scene.js 1356</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    确定2D地图是可旋转的，还是可以在水平方向上无限滚动。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="mapProjection">
+    <a href="#mapProjection" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>mapProjection<span class="type-signature"> : <a href="MapProjection.html">MapProjection</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L958">Scene/Scene.js 958</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取2D 和 Columbus View模式下的地图投影。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">new GeographicProjection()</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="maximumAliasedLineWidth">
+    <a href="#maximumAliasedLineWidth" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>maximumAliasedLineWidth<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L727">Scene/Scene.js 727</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    这个WebGL实现支持的最大反走样线宽度（aliased line width），以像素为单位。最小为1。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGet.xml">glGet</a> with <code>ALIASED_LINE_WIDTH_RANGE</code>.</li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="maximumCubeMapSize">
+    <a href="#maximumCubeMapSize" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>maximumCubeMapSize<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L742">Scene/Scene.js 742</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    此WebGL实现支持的立方体映射的边缘的最大像素长度。最少是16。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGet.xml">glGet</a> with <code>GL_MAX_CUBE_MAP_TEXTURE_SIZE</code>.</li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="maximumRenderTimeChange">
+    <a href="#maximumRenderTimeChange" class="doc-link"></a>
+    maximumRenderTimeChange<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L599">Scene/Scene.js 599</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    如果<a href="Scene.html#requestRenderMode"><code>Scene#requestRenderMode</code></a>是<code>true</code>，这个值定义了在渲染请求之前仿真时间允许的最大变化。
+较低的值增加渲染的帧数，较高的值减少渲染的帧数。如果<code>undefined</code>，对模拟时间的更改将不会请求渲染。
+这个值会影响场景中变化的渲染率，比如灯光、实体属性更新和动画。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">0.0</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a></li>
+    
+        <li><a href="Scene.html#requestRenderMode">Scene#requestRenderMode</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="minimumDisableDepthTestDistance">
+    <a href="#minimumDisableDepthTestDistance" class="doc-link"></a>
+    minimumDisableDepthTestDistance<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1385">Scene/Scene.js 1385</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取或者设置，距离相机多长距离禁用billboards，labels和points等的深度测试，例如用于防止剪切地形。
+设置为零时，深度测试应始终被应用，如果小于零，则永远不应应用深度测试。
+设置布告牌、标签或点的disableDepthTestDistance属性将覆盖此值。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">0.0</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="mode">
+    <a href="#mode" class="doc-link"></a>
+    mode<span class="type-signature"> : <a href="SceneMode.html">SceneMode</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1253">Scene/Scene.js 1253</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取或者设置当前场景的模式。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript"><a href="SceneMode.html#.SCENE3D"><code>SceneMode.SCENE3D</code></a></code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="moon">
+    <a href="#moon" class="doc-link"></a>
+    moon<span class="type-signature"> : <a href="Moon.html">Moon</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L292">Scene/Scene.js 292</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    月球 <a href="Moon.html"><code>Moon</code></a>。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">undefined</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="morphComplete">
+    <a href="#morphComplete" class="doc-link"></a>
+    morphComplete<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L249">Scene/Scene.js 249</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    事件在场景转换完成时触发。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">Event()</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="morphStart">
+    <a href="#morphStart" class="doc-link"></a>
+    morphStart<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L242">Scene/Scene.js 242</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    事件在场景转换开始时触发。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">Event()</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="morphTime">
+    <a href="#morphTime" class="doc-link"></a>
+    morphTime<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L315">Scene/Scene.js 315</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    2D/Columbus View 到3D模式转换的时间
+0.0 代表2D或者Columbus View，1.0代表3D。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">1.0</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="nearToFarDistance2D">
+    <a href="#nearToFarDistance2D" class="doc-link"></a>
+    nearToFarDistance2D<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L349">Scene/Scene.js 349</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    确定二维中的多个视锥的每个视锥的统一深度大小（以米为单位）。
+如果图元或模型表面发生z-fighting（深度冲突），减小该数值会消除z-fighting，但降低性能。
+另一方面，增加该值会提高性能，但是可能会导致接近表面的图元之间z-fighting（深度冲突）。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">1.75e6</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="orderIndependentTranslucency">
+    <a href="#orderIndependentTranslucency" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>orderIndependentTranslucency<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1229">Scene/Scene.js 1229</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取场景是否已启用顺序无关的半透明性。请注意，这仅反映原始构造选项，并且有其他可能阻止OIT在给定系统配置上运行的因素。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="pickPositionSupported">
+    <a href="#pickPositionSupported" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>pickPositionSupported<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L757">Scene/Scene.js 757</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    如果支持<a href="Scene.html#pickPosition"><code>Scene#pickPosition</code></a>函数，则返回<code>true</code>。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#pickPosition">Scene#pickPosition</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="pickTranslucentDepth">
+    <a href="#pickTranslucentDepth" class="doc-link"></a>
+    pickTranslucentDepth<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L464">Scene/Scene.js 464</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    当 <code>true</code>时，则启用使用深度缓冲区拾取半透明几何体的功能。注意 <a href="Scene.html#useDepthPicking"><code>Scene#useDepthPicking</code></a> 必须为true才能正常工作。
+<p>渲染必须在拾取之间调用。<br>启用时性能会下降。有额外的绘制调用来为半透明几何体写入深度。</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">// 拾取半透明图元的位置
+viewer.screenSpaceEventHandler.setInputAction(function onLeftClick(movement) {
+     var pickedFeature = viewer.scene.pick(movement.position);
+     if (!Cesium.defined(pickedFeature)) {
+         return;    // nothing picked
+     }
+     viewer.scene.render();
+     var worldPosition = viewer.scene.pickPosition(movement.position);
+}, Cesium.ScreenSpaceEventType.LEFT_CLICK);</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="postProcessStages">
+    <a href="#postProcessStages" class="doc-link"></a>
+    postProcessStages<span class="type-signature"> : <a href="PostProcessStageCollection.html">PostProcessStageCollection</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L528">Scene/Scene.js 528</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    应用于最终渲染的后期处理效果。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="postRender">
+    <a href="#postRender" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>postRender<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1160">Scene/Scene.js 1160</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取将在渲染场景后立即引发的事件。事件订阅者接收Scene实例作为第一个参数，并接收当前时间作为第二个参数。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a></li>
+    
+        <li><a href="Scene.html#preUpdate">Scene#preUpdate</a></li>
+    
+        <li><a href="Scene.html#postUpdate">Scene#postUpdate</a></li>
+    
+        <li><a href="Scene.html#postRender">Scene#postRender</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="postUpdate">
+    <a href="#postUpdate" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>postUpdate<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1109">Scene/Scene.js 1109</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取将在场景更新或渲染之后引发的事件。事件的订阅者接收场景实例作为第一个参数，当前时间作为第二个参数。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a></li>
+    
+        <li><a href="Scene.html#preUpdate">Scene#preUpdate</a></li>
+    
+        <li><a href="Scene.html#preRender">Scene#preRender</a></li>
+    
+        <li><a href="Scene.html#postRender">Scene#postRender</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="preRender">
+    <a href="#preRender" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>preRender<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1142">Scene/Scene.js 1142</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取在场景更新之后以及场景渲染之前立即引发的事件。事件的订���者将Scene实例作为第一个参数，将当前时间作为第二个参数参数。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a></li>
+    
+        <li><a href="Scene.html#preUpdate">Scene#preUpdate</a></li>
+    
+        <li><a href="Scene.html#postUpdate">Scene#postUpdate</a></li>
+    
+        <li><a href="Scene.html#postRender">Scene#postRender</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="preUpdate">
+    <a href="#preUpdate" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>preUpdate<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1091">Scene/Scene.js 1091</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取将在场景更新或渲染之前引发的事件。事件的订阅者接收场景实例作为第一个参数，当前时间作为第二个参数。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a></li>
+    
+        <li><a href="Scene.html#postUpdate">Scene#postUpdate</a></li>
+    
+        <li><a href="Scene.html#preRender">Scene#preRender</a></li>
+    
+        <li><a href="Scene.html#postRender">Scene#postRender</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="primitives">
+    <a href="#primitives" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>primitives<span class="type-signature"> : <a href="PrimitiveCollection.html">PrimitiveCollection</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L851">Scene/Scene.js 851</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取图元的集合。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="renderError">
+    <a href="#renderError" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>renderError<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1124">Scene/Scene.js 1124</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取将在<code>render</code>函数中抛出错误时引发的事件。
+场景实例和抛出的错误是传递给事件处理程序的仅有的两个参数。
+默认情况下，引发此事件后不会重新引发错误，但是可以通过设置 rethrowRenderErrors 属性来更改。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="requestRenderMode">
+    <a href="#requestRenderMode" class="doc-link"></a>
+    requestRenderMode<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L585">Scene/Scene.js 585</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    当为<code>true</code>时，则只在场景变化时渲染帧，开启可以提高程序性能，但是需要使用 <a href="Scene.html#requestRender"><code>Scene#requestRender</code></a> 去创建渲染新的一帧。
+在许多情况下，在API的其他部分对场景进行更改之后，这将是必要的。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/">Improving Performance with Explicit Rendering</a></li>
+    
+        <li><a href="Scene.html#maximumRenderTimeChange">Scene#maximumRenderTimeChange</a></li>
+    
+        <li><a href="Scene.html#requestRender">Scene#requestRender</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="rethrowRenderErrors">
+    <a href="#rethrowRenderErrors" class="doc-link"></a>
+    rethrowRenderErrors<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L227">Scene/Scene.js 227</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    捕获 <code>render</code> 中发生的异常，来引发<code>renderError</code> 事件，
+如果为true，则在引发事件后重新抛出错误。如果为false，则<code>render</code>引发事件后，该函数将正常返回。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="sampleHeightSupported">
+    <a href="#sampleHeightSupported" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>sampleHeightSupported<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L773">Scene/Scene.js 773</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    如果支持<a href="Scene.html#sampleHeight"><code>Scene#sampleHeight</code></a> 和 <a href="Scene.html#sampleHeightMostDetailed"><code>Scene#sampleHeightMostDetailed</code></a>功能，则返回<code>true</code>。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#sampleHeight">Scene#sampleHeight</a></li>
+    
+        <li><a href="Scene.html#sampleHeightMostDetailed">Scene#sampleHeightMostDetailed</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="scene3DOnly">
+    <a href="#scene3DOnly" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>scene3DOnly<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1217">Scene/Scene.js 1217</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取场景是否优化为仅用于3D视图。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="screenSpaceCameraController">
+    <a href="#screenSpaceCameraController" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>screenSpaceCameraController<span class="type-signature"> : <a href="ScreenSpaceCameraController.html">ScreenSpaceCameraController</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L943">Scene/Scene.js 943</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取用于相机输入处理的控制器。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="shadowMap">
+    <a href="#shadowMap" class="doc-link"></a>
+    shadowMap<span class="type-signature"> : <a href="ShadowMap.html">ShadowMap</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L486">Scene/Scene.js 486</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    场景中的阴影图。启用后，模型，图元和地球可能会投射并接收阴影。默认情况下，阴影图的光源是太阳。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="skyAtmosphere">
+    <a href="#skyAtmosphere" class="doc-link"></a>
+    skyAtmosphere<span class="type-signature"> : <a href="SkyAtmosphere.html">SkyAtmosphere</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L267">Scene/Scene.js 267</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    地球周围的大气层。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">undefined</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="skyBox">
+    <a href="#skyBox" class="doc-link"></a>
+    skyBox<span class="type-signature"> : <a href="SkyBox.html">SkyBox</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L259">Scene/Scene.js 259</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    天空盒<a href="SkyBox.html"><code>SkyBox</code></a>
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">undefined</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#backgroundColor">Scene#backgroundColor</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="specularEnvironmentMaps">
+    <a href="#specularEnvironmentMaps" class="doc-link"></a>
+    specularEnvironmentMaps<span class="type-signature"> : String</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L649">Scene/Scene.js 649</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    KTX文件的url，其中包含用于基于图像的PBR模型的高光环境映射和复杂的mipmaps。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="specularEnvironmentMapsSupported">
+    <a href="#specularEnvironmentMapsSupported" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>specularEnvironmentMapsSupported<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L819">Scene/Scene.js 819</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    如果支持高光环境贴图，则返回<code>true</code>。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#specularEnvironmentMaps">Scene#specularEnvironmentMaps</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="sphericalHarmonicCoefficients">
+    <a href="#sphericalHarmonicCoefficients" class="doc-link"></a>
+    sphericalHarmonicCoefficients<span class="type-signature"> : Array.&lt;<a href="Cartesian3.html">Cartesian3</a>></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L643">Scene/Scene.js 643</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    基于图像的PBR模型照明的球面调和系数。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="sun">
+    <a href="#sun" class="doc-link"></a>
+    sun<span class="type-signature"> : <a href="Sun.html">Sun</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L275">Scene/Scene.js 275</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    太阳 <a href="Sun.html"><code>Sun</code></a>。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">undefined</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="sunBloom">
+    <a href="#sunBloom" class="doc-link"></a>
+    sunBloom<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L283">Scene/Scene.js 283</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    启用时，在太阳上使用Bloom过滤器（一种发光效果）。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">true</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="sunColor">
+    <a href="#sunColor" class="doc-link"></a>
+    sunColor<span class="type-signature"> : <a href="Cartesian3.html">Cartesian3</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1471">Scene/Scene.js 1471</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取或设置由太阳发出的光的颜色。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">Cartesian3(1.8, 1.85, 2.0)</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="terrainExaggeration">
+    <a href="#terrainExaggeration" class="doc-link"></a>
+    terrainExaggeration<span class="type-signature"> : Number</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1309">Scene/Scene.js 1309</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取地形夸张系数。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="terrainProvider">
+    <a href="#terrainProvider" class="doc-link"></a>
+    terrainProvider<span class="type-signature"> : <a href="TerrainProvider.html">TerrainProvider</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1047">Scene/Scene.js 1047</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取 terrainProvider 。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="terrainProviderChanged">
+    <a href="#terrainProviderChanged" class="doc-link"></a>
+    <span class="type-signature attribute-readonly">readonly</span>terrainProviderChanged<span class="type-signature"> : <a href="Event.html">Event</a></span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1069">Scene/Scene.js 1069</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    获取terrainProvider发生改变时触发的事件。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="useDepthPicking">
+    <a href="#useDepthPicking" class="doc-link"></a>
+    useDepthPicking<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L444">Scene/Scene.js 444</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    当 <code>true</code> 时，启用使用深度缓冲区的拾取。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">true</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+<div class="nameContainer">
+<h4 class="name" id="useWebVR">
+    <a href="#useWebVR" class="doc-link"></a>
+    useWebVR<span class="type-signature"> : Boolean</span>
+    
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1321">Scene/Scene.js 1321</a>
+</div>
+
+
+</h4>
+
+</div>
+
+
+
+<div class="description">
+    当<code>true</code>时，将场景分割为两个视口，分别为左右眼的立体视图。用于cardboard和WebVR。
+</div>
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <span class="details-header">Default Value:</span>
+    <code class="language-javascript">false</code>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="cartesianToCanvasCoordinates">
+        <a href="#cartesianToCanvasCoordinates" class="doc-link"></a>
+        cartesianToCanvasCoordinates<span class="signature">(position, <span class="optional">result</span>)</span> &rarr; <span class="type-signature returnType"><a href="Cartesian2.html">Cartesian2</a></span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3689">Scene/Scene.js 3689</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    将笛卡尔坐标中的位置转换为canvas坐标。这通常用于将HTML元素放置在与场景中的对象相同的屏幕位置。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian3.html">Cartesian3</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                笛卡尔坐标中的位置。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>result</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian2.html">Cartesian2</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                一个可选对象，用于返回转换为画布坐标的输入位置。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    修改后的结果参数，或者如果没有提供则使用新的Cartesian2实例。如果输入位置在椭球的中心附近，可能会返回<code>undefined</code>。
+</div>
+
+
+    
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">// 每当鼠标移动时，输出经度/纬度(0,0)的画布位置。
+var scene = widget.scene;
+var ellipsoid = scene.globe.ellipsoid;
+var position = Cesium.Cartesian3.fromDegrees(0.0, 0.0);
+var handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
+handler.setInputAction(function(movement) {
+    console.log(scene.cartesianToCanvasCoordinates(position));
+}, Cesium.ScreenSpaceEventType.MOUSE_MOVE);</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="clampToHeight">
+        <a href="#clampToHeight" class="doc-link"></a>
+        clampToHeight<span class="signature">(cartesian, <span class="optional">objectsToExclude</span>, <span class="optional">width</span>, <span class="optional">result</span>)</span> &rarr; <span class="type-signature returnType"><a href="Cartesian3.html">Cartesian3</a></span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3603">Scene/Scene.js 3603</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    沿着大地表面法线将给定的笛卡尔坐标位置紧贴场景几何图形中。返回被紧贴的位置或如果没有需要紧贴的场景几何图形，则为<code>undefined</code>。
+可用于将对象紧贴到场景中的地球、3D Tiles或图元上。
+<p>
+此函数仅贴紧当前视图中渲染的地球瓦片和3D Tiles。紧贴所有其他图元，不管它们的可见性如何。
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cartesian</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian3.html">Cartesian3</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                给定的地理坐标。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectsToExclude</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                不固定紧贴的图元、实体或3D Tiles要素的列表。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">0.1</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                交叉体的宽度，单位为米。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>result</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian3.html">Cartesian3</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                返回固定紧贴位置的可选对象。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    修改后的结果参数，或者如果没有提供则使用新的Cartesian3实例。这可能是<code>undefined</code>如果没有场景几何可贴紧。
+</div>
+
+
+    
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: clampToHeight 仅支持3D模式。
+    </div>
+
+</li>
+    
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: clampToHeight 需要深度纹理支持。检查sampleHeightSupported。
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">// 贴紧一个实体到底层的场景几何图形
+var position = entity.position.getValue(Cesium.JulianDate.now());
+entity.position = viewer.scene.clampToHeight(position);</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#sampleHeight">Scene#sampleHeight</a></li>
+    
+        <li><a href="Scene.html#sampleHeightMostDetailed">Scene#sampleHeightMostDetailed</a></li>
+    
+        <li><a href="Scene.html#clampToHeightMostDetailed">Scene#clampToHeightMostDetailed</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="clampToHeightMostDetailed">
+        <a href="#clampToHeightMostDetailed" class="doc-link"></a>
+        clampToHeightMostDetailed<span class="signature">(cartesians, <span class="optional">objectsToExclude</span>, <span class="optional">width</span>)</span> &rarr; <span class="type-signature returnType">Promise.&lt;Array.&lt;<a href="Cartesian3.html">Cartesian3</a>>></span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3668">Scene/Scene.js 3668</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    使用场景中3D tileset的最大细节级别，为<a href="Cartesian3.html"><code>Cartesian3</code></a>位置数组发起异步<a href="Scene.html#clampToHeight"><code>Scene#clampToHeight</code></a>查询。
+返回在查询完成时解析的promise。每个位置都进行了适当的修改。
+如果由于无法在该位置采样几何图形而无法紧贴某个位置，或者发生了其他错误，则将数组中的元素设置为undefined。
+
+即异步 <a href="Scene.html#clampToHeight"><code>Scene#clampToHeight</code></a>查询，传入地理坐标数组，返回 <a href="Cartesian3.html"><code>Cartesian3</code></a> 位置数组。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cartesians</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="Cartesian3.html">Cartesian3</a>></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                地理坐标数组。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectsToExclude</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                过滤的globe, 3D Tiles, 或者 primitives集合。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">0.1</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                交叉口体积的宽度，单位为米。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    当查询完成时解析到所提供的位置列表的promise。
+</div>
+
+
+    
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: clampToHeightMostDetailed 仅支持3D模式。
+    </div>
+
+</li>
+    
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: clampToHeightMostDetailed 需要深度纹理支持。检查sampleHeightSupported。
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">var cartesians = [
+    entities[0].position.getValue(Cesium.JulianDate.now()),
+    entities[1].position.getValue(Cesium.JulianDate.now())
+];
+var promise = viewer.scene.clampToHeightMostDetailed(cartesians);
+promise.then(function(updatedCartesians) {
+    entities[0].position = updatedCartesians[0];
+    entities[1].position = updatedCartesians[1];
+}</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#clampToHeight">Scene#clampToHeight</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="completeMorph">
+        <a href="#completeMorph" class="doc-link"></a>
+        completeMorph<span class="signature">()</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3696">Scene/Scene.js 3696</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    立即完成主动转换。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="destroy">
+        <a href="#destroy" class="doc-link"></a>
+        destroy<span class="signature">()</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3773">Scene/Scene.js 3773</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    销毁此对象拥有的WebGL资源。销毁对象可以确定性释放WebGL资源，而不是依靠垃圾回收器来破坏此对象。
+一旦对象被销毁，调用<code>isDestroyed</code>将导致<a href="DeveloperError.html"><code>DeveloperError</code></a>异常。
+因此，如示例中所述，将返回值（ <code>undefined</code>）分配给对象。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: This object was destroyed, i.e., destroy() was called.
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">scene = scene &amp;&amp; scene.destroy();</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#isDestroyed">Scene#isDestroyed</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="drillPick">
+        <a href="#drillPick" class="doc-link"></a>
+        drillPick<span class="signature">(windowPosition, <span class="optional">limit</span>, <span class="optional">width</span>, <span class="optional">height</span>)</span> &rarr; <span class="type-signature returnType">Array.&lt;Object></span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3434">Scene/Scene.js 3434</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    返回拾取到的图元对象集合，图元列表按其在场景中的视觉顺序（从前到后）排序。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>windowPosition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian2.html">Cartesian2</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                执行拾取的窗口坐标。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                集合中对象的个数，如果超过这个数将不会再拾取。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">3</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                拾取矩形的宽度。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">3</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                拾取矩形的高度。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    对象数组，每个对象包含1个拾取的图元。
+</div>
+
+
+    
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: 未定义的 windowPosition。
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">var pickedObjects = scene.drillPick(new Cesium.Cartesian2(100.0, 200.0));</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#pick">Scene#pick</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="getCompressedTextureFormatSupported">
+        <a href="#getCompressedTextureFormatSupported" class="doc-link"></a>
+        getCompressedTextureFormatSupported<span class="signature">(format)</span> &rarr; <span class="type-signature returnType">boolean</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L1513">Scene/Scene.js 1513</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    是否支持压缩纹理格式。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+            
+                纹理格式。可能是格式名或WebGL扩展名，例如s3tc或WEBGL_compressed_texture_s3tc。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    是否支持该格式。
+</div>
+
+
+    
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="isDestroyed">
+        <a href="#isDestroyed" class="doc-link"></a>
+        isDestroyed<span class="signature">()</span> &rarr; <span class="type-signature returnType">Boolean</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3757">Scene/Scene.js 3757</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    如果此对象已销毁，则返回true；否则返回false。否则为假。
+<br /><br />
+如果该对象被破坏，则不应使用。将导致 <a href="DeveloperError.html"><code>DeveloperError</code></a> 异常。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    如果对象被销毁返回<code>true</code>，否则返回<code>false</code>。
+</div>
+
+
+    
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#destroy">Scene#destroy</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="morphTo2D">
+        <a href="#morphTo2D" class="doc-link"></a>
+        morphTo2D<span class="signature">(<span class="optional">duration</span>)</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3704">Scene/Scene.js 3704</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    异步地将场景转换为2D。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">2.0</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                转换动画完成所需的时间（以秒为单位）。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="morphTo3D">
+        <a href="#morphTo3D" class="doc-link"></a>
+        morphTo3D<span class="signature">(<span class="optional">duration</span>)</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3736">Scene/Scene.js 3736</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    异步地将场景转换为3D。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">2.0</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                转换动画完成所需的时间（以秒为单位）。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="morphToColumbusView">
+        <a href="#morphToColumbusView" class="doc-link"></a>
+        morphToColumbusView<span class="signature">(<span class="optional">duration</span>)</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3720">Scene/Scene.js 3720</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    异步地将场景转换为Columbus View。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">2.0</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                转换动画完成所需的时间（以秒为单位）。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="pick">
+        <a href="#pick" class="doc-link"></a>
+        pick<span class="signature">(windowPosition, <span class="optional">width</span>, <span class="optional">height</span>)</span> &rarr; <span class="type-signature returnType">Object</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3375">Scene/Scene.js 3375</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    返回一个带有“primitive”属性的对象，该属性包含场景中位于特定窗口坐标处的第一个图元（顶部），如果该位置没有任何内容，则返回undefined。
+其他属性可能根据图元的类型进行设置，并可能用于进一步标识选中的对象。
+<p>
+拾取3D Tiles tileset的要素后， <code>pick</code>返回 <a href="Cesium3DTileFeature.html"><code>Cesium3DTileFeature</code></a>  对象。
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>windowPosition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian2.html">Cartesian2</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                拾取的窗口坐标。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">3</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                拾取矩形的宽度。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">3</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                拾取矩形的高度。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    返回拾取的图元对象。
+</div>
+
+
+    
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">// 鼠标移上去时显示黄色。
+handler.setInputAction(function(movement) {
+    var feature = scene.pick(movement.endPosition);
+    if (feature instanceof Cesium.Cesium3DTileFeature) {
+        feature.color = Cesium.Color.YELLOW;
+    }
+}, Cesium.ScreenSpaceEventType.MOUSE_MOVE);</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="pickPosition">
+        <a href="#pickPosition" class="doc-link"></a>
+        pickPosition<span class="signature">(windowPosition, <span class="optional">result</span>)</span> &rarr; <span class="type-signature returnType"><a href="Cartesian3.html">Cartesian3</a></span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3414">Scene/Scene.js 3414</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    返回从深度缓冲区和窗口位置重建的笛卡尔坐标位置。
+<p>
+从2D中的深度缓冲区重建的位置可能与3D和Columbus view中返回的位置有差异。
+这是由于透视深度值的分布与正投影深度值的分布不同造成的。
+</p>
+<p>
+设置 <a href="Scene.html#pickTranslucentDepth"><code>Scene#pickTranslucentDepth</code></a> 为 <code>true</code>来包含半透明图元，否则这本质上会选择半透明的图元。
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>windowPosition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian2.html">Cartesian2</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                执行拾取的窗口坐标。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>result</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartesian3.html">Cartesian3</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                存储结果的对象。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    笛卡尔位置。
+</div>
+
+
+    
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: 不支持从深度缓冲区中进行选择，检查pickPositionSupported。
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="requestRender">
+        <a href="#requestRender" class="doc-link"></a>
+        requestRender<span class="signature">()</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3343">Scene/Scene.js 3343</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    当 <a href="Scene.html#requestRenderMode"><code>Scene#requestRenderMode</code></a>设置为 true 时，请求新的渲染帧。渲染速率将不会超过<a href="CesiumWidget.html#targetFrameRate"><code>CesiumWidget#targetFrameRate</code></a> 。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#requestRenderMode">Scene#requestRenderMode</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="sampleHeight">
+        <a href="#sampleHeight" class="doc-link"></a>
+        sampleHeight<span class="signature">(position, <span class="optional">objectsToExclude</span>, <span class="optional">width</span>)</span> &rarr; <span class="type-signature returnType">Number</span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3574">Scene/Scene.js 3574</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    返回给定地理坐标位置的场景几何高度，如果没有场景几何高度样本，则返回<code>undefined</code>。输入位置的高度被忽略。
+可用于将对象固定到场景中的地球、3D Tiles或图元上。
+<p>
+此函数仅对当前视图中渲染的地球瓦片和3D Tiles的高度进行采样。高度不受可见性影响。
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cartographic.html">Cartographic</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                给定的地理坐标。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectsToExclude</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                过滤的图元、实体或3D瓦片的要素列表，以避免采样高度。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">0.1</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                交叉体的宽度，单位为米。</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    高度。这可能是<code>undefined</code>如果没有场景几何来采样高度。
+</div>
+
+
+    
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: sampleHeight 仅支持3D模式。
+    </div>
+
+</li>
+    
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: sampleHeight 需要深度纹理支持。检查sampleHeightSupported。
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">var position = new Cesium.Cartographic(-1.31968, 0.698874);
+var height = viewer.scene.sampleHeight(position);
+console.log(height);</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#clampToHeight">Scene#clampToHeight</a></li>
+    
+        <li><a href="Scene.html#clampToHeightMostDetailed">Scene#clampToHeightMostDetailed</a></li>
+    
+        <li><a href="Scene.html#sampleHeightMostDetailed">Scene#sampleHeightMostDetailed</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+            
+    <div class="nameContainer">
+    <h4 class="name" id="sampleHeightMostDetailed">
+        <a href="#sampleHeightMostDetailed" class="doc-link"></a>
+        sampleHeightMostDetailed<span class="signature">(positions, <span class="optional">objectsToExclude</span>, <span class="optional">width</span>)</span> &rarr; <span class="type-signature returnType">Promise.&lt;Array.&lt;Number>></span>
+        
+
+<div class="source-link rightLinks">
+    <a href="https://github.com/AnalyticalGraphicsInc/cesium/blob/1.63.1/Source/Scene/Scene.js#L3635">Scene/Scene.js 3635</a>
+</div>
+
+
+    </h4>
+
+    </div>
+
+    
+
+
+<div class="description">
+    使用场景中3D tileset的最大详细级别，为<a href="Cartographic.html"><code>Cartographic</code></a>位置数组发起异步<a href="Scene.html#sampleHeight"><code>Scene#sampleHeight</code></a>查询。
+输入位置的高度被忽略。返回在查询完成时解析的promise。每个点的高度都在适当的地方进行了修改。
+如果由于无法在该位置采样几何图形而无法确定高度，或者发生了其他错误，则将高度设置为undefined。
+
+即异步 <a href="Scene.html#sampleHeight"><code>Scene#sampleHeight</code></a> 查询，传入地理坐标数组，返回高度数组。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>positions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="Cartographic.html">Cartographic</a>></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                
+
+                
+            
+                要随取样高度更新的地理位置。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectsToExclude</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                图元、实体或3D Tiles的要素列表，以避免采样高度。</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    <code class="language-javascript">0.1</code>
+                
+                </td>
+            
+
+            <td class="description last">
+            
+                
+                        <span class="optional">optional</span>
+                
+                
+
+                
+            
+                交叉体的宽度，单位为米。</td>
+        </tr>
+
+    
+    </t 
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    当查询完成时解析到所提供的位置列表的promise。
+</div>
+
+
+    
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: sampleHeightMostDetailed 仅支持3D模式。
+    </div>
+
+</li>
+    
+        <li>
+
+    <div class="param-desc">
+        
+<span class="param-type"><a href="DeveloperError.html">DeveloperError</a></span>
+
+: sampleHeightMostDetailed 需要深度纹理支持。检查sampleHeightSupported。
+    </div>
+
+</li>
+    </ul>
+
+
+
+<dl class="details">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example:</h5>
+        
+    <pre><code class="language-javascript">var positions = [
+    new Cesium.Cartographic(-1.31968, 0.69887),
+    new Cesium.Cartographic(-1.10489, 0.83923)
+];
+var promise = viewer.scene.sampleHeightMostDetailed(positions);
+promise.then(function(updatedPosition) {
+    // positions[0].height and positions[1].height have been updated.
+    // updatedPositions is just a reference to positions.
+}</code></pre>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>See:</h5>
+    <ul class="see-list">
+        <li><a href="Scene.html#sampleHeight">Scene#sampleHeight</a></li>
+    </ul>
+    
+
+    
+</dl>
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+    <footer>
+        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a>
+    </footer>
+</div>
+
+<div class="nav">
+    <div class="menu">
+        <input type="text" class="classFilter" id="ClassFilter" placeholder="Search">
+        <ul id="ClassList"><li data-name="Animation"><a href="Animation.html">Animation</a></li><li data-name="AnimationViewModel"><a href="AnimationViewModel.html">AnimationViewModel</a></li><li data-name="Appearance"><a href="Appearance.html">Appearance</a></li><li data-name="ArcGisMapServerImageryProvider"><a href="ArcGisMapServerImageryProvider.html">ArcGisMapServerImageryProvider</a></li><li data-name="ArcGISTiledElevationTerrainProvider"><a href="ArcGISTiledElevationTerrainProvider.html">ArcGISTiledElevationTerrainProvider</a></li><li data-name="ArcType"><a href="ArcType.html">ArcType</a></li><li data-name="AssociativeArray"><a href="AssociativeArray.html">AssociativeArray</a></li><li data-name="AxisAlignedBoundingBox"><a href="AxisAlignedBoundingBox.html">AxisAlignedBoundingBox</a></li><li data-name="barycentricCoordinates"><a href="barycentricCoordinates.html">barycentricCoordinates</a></li><li data-name="BaseLayerPicker"><a href="BaseLayerPicker.html">BaseLayerPicker</a></li><li data-name="BaseLayerPickerViewModel"><a href="BaseLayerPickerViewModel.html">BaseLayerPickerViewModel</a></li><li data-name="Billboard"><a href="Billboard.html">Billboard</a></li><li data-name="BillboardCollection"><a href="BillboardCollection.html">BillboardCollection</a></li><li data-name="BillboardGraphics"><a href="BillboardGraphics.html">BillboardGraphics</a></li><li data-name="BillboardVisualizer"><a href="BillboardVisualizer.html">BillboardVisualizer</a></li><li data-name="binarySearch"><a href="binarySearch.html">binarySearch</a></li><li data-name="BingMapsApi"><a href="BingMapsApi.html">BingMapsApi</a></li><li data-name="BingMapsGeocoderService"><a href="BingMapsGeocoderService.html">BingMapsGeocoderService</a></li><li data-name="BingMapsImageryProvider"><a href="BingMapsImageryProvider.html">BingMapsImageryProvider</a></li><li data-name="BingMapsStyle"><a href="BingMapsStyle.html">BingMapsStyle</a></li><li data-name="BlendEquation"><a href="BlendEquation.html">BlendEquation</a></li><li data-name="BlendFunction"><a href="BlendFunction.html">BlendFunction</a></li><li data-name="BlendingState"><a href="BlendingState.html">BlendingState</a></li><li data-name="BlendOption"><a href="BlendOption.html">BlendOption</a></li><li data-name="BoundingRectangle"><a href="BoundingRectangle.html">BoundingRectangle</a></li><li data-name="BoundingSphere"><a href="BoundingSphere.html">BoundingSphere</a></li><li data-name="BoxEmitter"><a href="BoxEmitter.html">BoxEmitter</a></li><li data-name="BoxGeometry"><a href="BoxGeometry.html">BoxGeometry</a></li><li data-name="BoxGeometryUpdater"><a href="BoxGeometryUpdater.html">BoxGeometryUpdater</a></li><li data-name="BoxGraphics"><a href="BoxGraphics.html">BoxGraphics</a></li><li data-name="BoxOutlineGeometry"><a href="BoxOutlineGeometry.html">BoxOutlineGeometry</a></li><li data-name="CallbackProperty"><a href="CallbackProperty.html">CallbackProperty</a></li><li data-name="Camera"><a href="Camera.html">Camera</a></li><li data-name="CameraEventAggregator"><a href="CameraEventAggregator.html">CameraEventAggregator</a></li><li data-name="CameraEventType"><a href="CameraEventType.html">CameraEventType</a></li><li data-name="cancelAnimationFrame"><a href="cancelAnimationFrame.html">cancelAnimationFrame</a></li><li data-name="Cartesian2"><a href="Cartesian2.html">Cartesian2</a></li><li data-name="Cartesian3"><a href="Cartesian3.html">Cartesian3</a></li><li data-name="Cartesian4"><a href="Cartesian4.html">Cartesian4</a></li><li data-name="Cartographic"><a href="Cartographic.html">Cartographic</a></li><li data-name="CartographicGeocoderService"><a href="CartographicGeocoderService.html">CartographicGeocoderService</a></li><li data-name="CatmullRomSpline"><a href="CatmullRomSpline.html">CatmullRomSpline</a></li><li data-name="Cesium3DTile"><a href="Cesium3DTile.html">Cesium3DTile</a></li><li data-name="Cesium3DTileColorBlendMode"><a href="Cesium3DTileColorBlendMode.html">Cesium3DTileColorBlendMode</a></li><li data-name="Cesium3DTileContent"><a href="Cesium3DTileContent.html">Cesium3DTileContent</a></li><li data-name="Cesium3DTileFeature"><a href="Cesium3DTileFeature.html">Cesium3DTileFeature</a></li><li data-name="Cesium3DTilePointFeature"><a href="Cesium3DTilePointFeature.html">Cesium3DTilePointFeature</a></li><li data-name="Cesium3DTileset"><a href="Cesium3DTileset.html">Cesium3DTileset</a></li><li data-name="Cesium3DTilesInspector"><a href="Cesium3DTilesInspector.html">Cesium3DTilesInspector</a></li><li data-name="Cesium3DTilesInspectorViewModel"><a href="Cesium3DTilesInspectorViewModel.html">Cesium3DTilesInspectorViewModel</a></li><li data-name="Cesium3DTileStyle"><a href="Cesium3DTileStyle.html">Cesium3DTileStyle</a></li><li data-name="CesiumInspector"><a href="CesiumInspector.html">CesiumInspector</a></li><li data-name="CesiumInspectorViewModel"><a href="CesiumInspectorViewModel.html">CesiumInspectorViewModel</a></li><li data-name="CesiumTerrainProvider"><a href="CesiumTerrainProvider.html">CesiumTerrainProvider</a></li><li data-name="CesiumWidget"><a href="CesiumWidget.html">CesiumWidget</a></li><li data-name="CheckerboardMaterialProperty"><a href="CheckerboardMaterialProperty.html">CheckerboardMaterialProperty</a></li><li data-name="CircleEmitter"><a href="CircleEmitter.html">CircleEmitter</a></li><li data-name="CircleGeometry"><a href="CircleGeometry.html">CircleGeometry</a></li><li data-name="CircleOutlineGeometry"><a href="CircleOutlineGeometry.html">CircleOutlineGeometry</a></li><li data-name="ClassificationPrimitive"><a href="ClassificationPrimitive.html">ClassificationPrimitive</a></li><li data-name="ClassificationType"><a href="ClassificationType.html">ClassificationType</a></li><li data-name="ClippingPlane"><a href="ClippingPlane.html">ClippingPlane</a></li><li data-name="ClippingPlaneCollection"><a href="ClippingPlaneCollection.html">ClippingPlaneCollection</a></li><li data-name="Clock"><a href="Clock.html">Clock</a></li><li data-name="ClockRange"><a href="ClockRange.html">ClockRange</a></li><li data-name="ClockStep"><a href="ClockStep.html">ClockStep</a></li><li data-name="ClockViewModel"><a href="ClockViewModel.html">ClockViewModel</a></li><li data-name="clone"><a href="clone.html">clone</a></li><li data-name="Color"><a href="Color.html">Color</a></li><li data-name="ColorBlendMode"><a href="ColorBlendMode.html">ColorBlendMode</a></li><li data-name="ColorGeometryInstanceAttribute"><a href="ColorGeometryInstanceAttribute.html">ColorGeometryInstanceAttribute</a></li><li data-name="ColorMaterialProperty"><a href="ColorMaterialProperty.html">ColorMaterialProperty</a></li><li data-name="combine"><a href="combine.html">combine</a></li><li data-name="Command"><a href="Command.html">Command</a></li><li data-name="ComponentDatatype"><a href="ComponentDatatype.html">ComponentDatatype</a></li><li data-name="CompositeEntityCollection"><a href="CompositeEntityCollection.html">CompositeEntityCollection</a></li><li data-name="CompositeMaterialProperty"><a href="CompositeMaterialProperty.html">CompositeMaterialProperty</a></li><li data-name="CompositePositionProperty"><a href="CompositePositionProperty.html">CompositePositionProperty</a></li><li data-name="CompositeProperty"><a href="CompositeProperty.html">CompositeProperty</a></li><li data-name="CompressedTextureBuffer"><a href="CompressedTextureBuffer.html">CompressedTextureBuffer</a></li><li data-name="ConditionsExpression"><a href="ConditionsExpression.html">ConditionsExpression</a></li><li data-name="ConeEmitter"><a href="ConeEmitter.html">ConeEmitter</a></li><li data-name="ConstantPositionProperty"><a href="ConstantPositionProperty.html">ConstantPositionProperty</a></li><li data-name="ConstantProperty"><a href="ConstantProperty.html">ConstantProperty</a></li><li data-name="CoplanarPolygonGeometry"><a href="CoplanarPolygonGeometry.html">CoplanarPolygonGeometry</a></li><li data-name="CoplanarPolygonOutlineGeometry"><a href="CoplanarPolygonOutlineGeometry.html">CoplanarPolygonOutlineGeometry</a></li><li data-name="CornerType"><a href="CornerType.html">CornerType</a></li><li data-name="CorridorGeometry"><a href="CorridorGeometry.html">CorridorGeometry</a></li><li data-name="CorridorGeometryUpdater"><a href="CorridorGeometryUpdater.html">CorridorGeometryUpdater</a></li><li data-name="CorridorGraphics"><a href="CorridorGraphics.html">CorridorGraphics</a></li><li data-name="CorridorOutlineGeometry"><a href="CorridorOutlineGeometry.html">CorridorOutlineGeometry</a></li><li data-name="createCommand"><a href="createCommand.html">createCommand</a></li><li data-name="createGuid"><a href="createGuid.html">createGuid</a></li><li data-name="createOpenStreetMapImageryProvider"><a href="createOpenStreetMapImageryProvider.html">createOpenStreetMapImageryProvider</a></li><li data-name="createTangentSpaceDebugPrimitive"><a href="createTangentSpaceDebugPrimitive.html">createTangentSpaceDebugPrimitive</a></li><li data-name="createTileMapServiceImageryProvider"><a href="createTileMapServiceImageryProvider.html">createTileMapServiceImageryProvider</a></li><li data-name="createWorldImagery"><a href="createWorldImagery.html">createWorldImagery</a></li><li data-name="createWorldTerrain"><a href="createWorldTerrain.html">createWorldTerrain</a></li><li data-name="Credit"><a href="Credit.html">Credit</a></li><li data-name="CreditDisplay"><a href="CreditDisplay.html">CreditDisplay</a></li><li data-name="CubicRealPolynomial"><a href="CubicRealPolynomial.html">CubicRealPolynomial</a></li><li data-name="CullFace"><a href="CullFace.html">CullFace</a></li><li data-name="CullingVolume"><a href="CullingVolume.html">CullingVolume</a></li><li data-name="CustomDataSource"><a href="CustomDataSource.html">CustomDataSource</a></li><li data-name="CylinderGeometry"><a href="CylinderGeometry.html">CylinderGeometry</a></li><li data-name="CylinderGeometryUpdater"><a href="CylinderGeometryUpdater.html">CylinderGeometryUpdater</a></li><li data-name="CylinderGraphics"><a href="CylinderGraphics.html">CylinderGraphics</a></li><li data-name="CylinderOutlineGeometry"><a href="CylinderOutlineGeometry.html">CylinderOutlineGeometry</a></li><li data-name="CzmlDataSource"><a href="CzmlDataSource.html">CzmlDataSource</a></li><li data-name="DataSource"><a href="DataSource.html">DataSource</a></li><li data-name="DataSourceClock"><a href="DataSourceClock.html">DataSourceClock</a></li><li data-name="DataSourceCollection"><a href="DataSourceCollection.html">DataSourceCollection</a></li><li data-name="DataSourceDisplay"><a href="DataSourceDisplay.html">DataSourceDisplay</a></li><li data-name="DebugAppearance"><a href="DebugAppearance.html">DebugAppearance</a></li><li data-name="DebugCameraPrimitive"><a href="DebugCameraPrimitive.html">DebugCameraPrimitive</a></li><li data-name="DebugModelMatrixPrimitive"><a href="DebugModelMatrixPrimitive.html">DebugModelMatrixPrimitive</a></li><li data-name="DefaultProxy"><a href="DefaultProxy.html">DefaultProxy</a></li><li data-name="defaultValue"><a href="defaultValue.html">defaultValue</a></li><li data-name="defined"><a href="defined.html">defined</a></li><li data-name="DepthFunction"><a href="DepthFunction.html">DepthFunction</a></li><li data-name="destroyObject"><a href="destroyObject.html">destroyObject</a></li><li data-name="DeveloperError"><a href="DeveloperError.html">DeveloperError</a></li><li data-name="DiscardEmptyTileImagePolicy"><a href="DiscardEmptyTileImagePolicy.html">DiscardEmptyTileImagePolicy</a></li><li data-name="DiscardMissingTileImagePolicy"><a href="DiscardMissingTileImagePolicy.html">DiscardMissingTileImagePolicy</a></li><li data-name="DistanceDisplayCondition"><a href="DistanceDisplayCondition.html">DistanceDisplayCondition</a></li><li data-name="DistanceDisplayConditionGeometryInstanceAttribute"><a href="DistanceDisplayConditionGeometryInstanceAttribute.html">DistanceDisplayConditionGeometryInstanceAttribute</a></li><li data-name="EasingFunction"><a href="EasingFunction.html">EasingFunction</a></li><li data-name="EllipseGeometry"><a href="EllipseGeometry.html">EllipseGeometry</a></li><li data-name="EllipseGeometryUpdater"><a href="EllipseGeometryUpdater.html">EllipseGeometryUpdater</a></li><li data-name="EllipseGraphics"><a href="EllipseGraphics.html">EllipseGraphics</a></li><li data-name="EllipseOutlineGeometry"><a href="EllipseOutlineGeometry.html">EllipseOutlineGeometry</a></li><li data-name="Ellipsoid"><a href="Ellipsoid.html">Ellipsoid</a></li><li data-name="EllipsoidGeodesic"><a href="EllipsoidGeodesic.html">EllipsoidGeodesic</a></li><li data-name="EllipsoidGeometry"><a href="EllipsoidGeometry.html">EllipsoidGeometry</a></li><li data-name="EllipsoidGeometryUpdater"><a href="EllipsoidGeometryUpdater.html">EllipsoidGeometryUpdater</a></li><li data-name="EllipsoidGraphics"><a href="EllipsoidGraphics.html">EllipsoidGraphics</a></li><li data-name="EllipsoidOutlineGeometry"><a href="EllipsoidOutlineGeometry.html">EllipsoidOutlineGeometry</a></li><li data-name="EllipsoidRhumbLine"><a href="EllipsoidRhumbLine.html">EllipsoidRhumbLine</a></li><li data-name="EllipsoidSurfaceAppearance"><a href="EllipsoidSurfaceAppearance.html">EllipsoidSurfaceAppearance</a></li><li data-name="EllipsoidTangentPlane"><a href="EllipsoidTangentPlane.html">EllipsoidTangentPlane</a></li><li data-name="EllipsoidTerrainProvider"><a href="EllipsoidTerrainProvider.html">EllipsoidTerrainProvider</a></li><li data-name="Entity"><a href="Entity.html">Entity</a></li><li data-name="EntityCluster"><a href="EntityCluster.html">EntityCluster</a></li><li data-name="EntityCollection"><a href="EntityCollection.html">EntityCollection</a></li><li data-name="EntityView"><a href="EntityView.html">EntityView</a></li><li data-name="Event"><a href="Event.html">Event</a></li><li data-name="EventHelper"><a href="EventHelper.html">EventHelper</a></li><li data-name="exportKml"><a href="exportKml.html">exportKml</a></li><li data-name="Expression"><a href="Expression.html">Expression</a></li><li data-name="ExtrapolationType"><a href="ExtrapolationType.html">ExtrapolationType</a></li><li data-name="FeatureDetection"><a href="FeatureDetection.html">FeatureDetection</a></li><li data-name="Fog"><a href="Fog.html">Fog</a></li><li data-name="formatError"><a href="formatError.html">formatError</a></li><li data-name="FrameRateMonitor"><a href="FrameRateMonitor.html">FrameRateMonitor</a></li><li data-name="FrustumGeometry"><a href="FrustumGeometry.html">FrustumGeometry</a></li><li data-name="FrustumOutlineGeometry"><a href="FrustumOutlineGeometry.html">FrustumOutlineGeometry</a></li><li data-name="Fullscreen"><a href="Fullscreen.html">Fullscreen</a></li><li data-name="FullscreenButton"><a href="FullscreenButton.html">FullscreenButton</a></li><li data-name="FullscreenButtonViewModel"><a href="FullscreenButtonViewModel.html">FullscreenButtonViewModel</a></li><li data-name="Geocoder"><a href="Geocoder.html">Geocoder</a></li><li data-name="GeocoderService"><a href="GeocoderService.html">GeocoderService</a></li><li data-name="GeocoderViewModel"><a href="GeocoderViewModel.html">GeocoderViewModel</a></li><li data-name="GeocodeType"><a href="GeocodeType.html">GeocodeType</a></li><li data-name="GeographicProjection"><a href="GeographicProjection.html">GeographicProjection</a></li><li data-name="GeographicTilingScheme"><a href="GeographicTilingScheme.html">GeographicTilingScheme</a></li><li data-name="GeoJsonDataSource"><a href="GeoJsonDataSource.html">GeoJsonDataSource</a></li><li data-name="Geometry"><a href="Geometry.html">Geometry</a></li><li data-name="GeometryAttribute"><a href="GeometryAttribute.html">GeometryAttribute</a></li><li data-name="GeometryAttributes"><a href="GeometryAttributes.html">GeometryAttributes</a></li><li data-name="GeometryInstance"><a href="GeometryInstance.html">GeometryInstance</a></li><li data-name="GeometryInstanceAttribute"><a href="GeometryInstanceAttribute.html">GeometryInstanceAttribute</a></li><li data-name="GeometryPipeline"><a href="GeometryPipeline.html">GeometryPipeline</a></li><li data-name="GeometryUpdater"><a href="GeometryUpdater.html">GeometryUpdater</a></li><li data-name="GeometryVisualizer"><a href="GeometryVisualizer.html">GeometryVisualizer</a></li><li data-name="getAbsoluteUri"><a href="getAbsoluteUri.html">getAbsoluteUri</a></li><li data-name="getBaseUri"><a href="getBaseUri.html">getBaseUri</a></li><li data-name="getExtensionFromUri"><a href="getExtensionFromUri.html">getExtensionFromUri</a></li><li data-name="GetFeatureInfoFormat"><a href="GetFeatureInfoFormat.html">GetFeatureInfoFormat</a></li><li data-name="getFilenameFromUri"><a href="getFilenameFromUri.html">getFilenameFromUri</a></li><li data-name="getImagePixels"><a href="getImagePixels.html">getImagePixels</a></li><li data-name="getTimestamp"><a href="getTimestamp.html">getTimestamp</a></li><li data-name="Globe"><a href="Globe.html">Globe</a></li><li data-name="GoogleEarthEnterpriseImageryProvider"><a href="GoogleEarthEnterpriseImageryProvider.html">GoogleEarthEnterpriseImageryProvider</a></li><li data-name="GoogleEarthEnterpriseMapsProvider"><a href="GoogleEarthEnterpriseMapsProvider.html">GoogleEarthEnterpriseMapsProvider</a></li><li data-name="GoogleEarthEnterpriseMetadata"><a href="GoogleEarthEnterpriseMetadata.html">GoogleEarthEnterpriseMetadata</a></li><li data-name="GoogleEarthEnterpriseTerrainData"><a href="GoogleEarthEnterpriseTerrainData.html">GoogleEarthEnterpriseTerrainData</a></li><li data-name="GoogleEarthEnterpriseTerrainProvider"><a href="GoogleEarthEnterpriseTerrainProvider.html">GoogleEarthEnterpriseTerrainProvider</a></li><li data-name="GregorianDate"><a href="GregorianDate.html">GregorianDate</a></li><li data-name="GridImageryProvider"><a href="GridImageryProvider.html">GridImageryProvider</a></li><li data-name="GridMaterialProperty"><a href="GridMaterialProperty.html">GridMaterialProperty</a></li><li data-name="GroundGeometryUpdater"><a href="GroundGeometryUpdater.html">GroundGeometryUpdater</a></li><li data-name="GroundPolylineGeometry"><a href="GroundPolylineGeometry.html">GroundPolylineGeometry</a></li><li data-name="GroundPolylinePrimitive"><a href="GroundPolylinePrimitive.html">GroundPolylinePrimitive</a></li><li data-name="GroundPrimitive"><a href="GroundPrimitive.html">GroundPrimitive</a></li><li data-name="HeadingPitchRange"><a href="HeadingPitchRange.html">HeadingPitchRange</a></li><li data-name="HeadingPitchRoll"><a href="HeadingPitchRoll.html">HeadingPitchRoll</a></li><li data-name="HeightmapEncoding"><a href="HeightmapEncoding.html">HeightmapEncoding</a></li><li data-name="HeightmapTerrainData"><a href="HeightmapTerrainData.html">HeightmapTerrainData</a></li><li data-name="HeightReference"><a href="HeightReference.html">HeightReference</a></li><li data-name="HermitePolynomialApproximation"><a href="HermitePolynomialApproximation.html">HermitePolynomialApproximation</a></li><li data-name="HermiteSpline"><a href="HermiteSpline.html">HermiteSpline</a></li><li data-name="HomeButton"><a href="HomeButton.html">HomeButton</a></li><li data-name="HomeButtonViewModel"><a href="HomeButtonViewModel.html">HomeButtonViewModel</a></li><li data-name="HorizontalOrigin"><a href="HorizontalOrigin.html">HorizontalOrigin</a></li><li data-name="ImageMaterialProperty"><a href="ImageMaterialProperty.html">ImageMaterialProperty</a></li><li data-name="ImageryLayer"><a href="ImageryLayer.html">ImageryLayer</a></li><li data-name="ImageryLayerCollection"><a href="ImageryLayerCollection.html">ImageryLayerCollection</a></li><li data-name="ImageryLayerFeatureInfo"><a href="ImageryLayerFeatureInfo.html">ImageryLayerFeatureInfo</a></li><li data-name="ImageryProvider"><a href="ImageryProvider.html">ImageryProvider</a></li><li data-name="ImagerySplitDirection"><a href="ImagerySplitDirection.html">ImagerySplitDirection</a></li><li data-name="IndexDatatype"><a href="IndexDatatype.html">IndexDatatype</a></li><li data-name="InfoBox"><a href="InfoBox.html">InfoBox</a></li><li data-name="InfoBoxViewModel"><a href="InfoBoxViewModel.html">InfoBoxViewModel</a></li><li data-name="InterpolationAlgorithm"><a href="InterpolationAlgorithm.html">InterpolationAlgorithm</a></li><li data-name="Intersect"><a href="Intersect.html">Intersect</a></li><li data-name="Intersections2D"><a href="Intersections2D.html">Intersections2D</a></li><li data-name="IntersectionTests"><a href="IntersectionTests.html">IntersectionTests</a></li><li data-name="Interval"><a href="Interval.html">Interval</a></li><li data-name="Ion"><a href="Ion.html">Ion</a></li><li data-name="IonGeocoderService"><a href="IonGeocoderService.html">IonGeocoderService</a></li><li data-name="IonImageryProvider"><a href="IonImageryProvider.html">IonImageryProvider</a></li><li data-name="IonResource"><a href="IonResource.html">IonResource</a></li><li data-name="IonWorldImageryStyle"><a href="IonWorldImageryStyle.html">IonWorldImageryStyle</a></li><li data-name="isArray"><a href="isArray.html">isArray</a></li><li data-name="isLeapYear"><a href="isLeapYear.html">isLeapYear</a></li><li data-name="Iso8601"><a href="Iso8601.html">Iso8601</a></li><li data-name="JulianDate"><a href="JulianDate.html">JulianDate</a></li><li data-name="KeyboardEventModifier"><a href="KeyboardEventModifier.html">KeyboardEventModifier</a></li><li data-name="KmlCamera"><a href="KmlCamera.html">KmlCamera</a></li><li data-name="KmlDataSource"><a href="KmlDataSource.html">KmlDataSource</a></li><li data-name="KmlFeatureData"><a href="KmlFeatureData.html">KmlFeatureData</a></li><li data-name="KmlLookAt"><a href="KmlLookAt.html">KmlLookAt</a></li><li data-name="KmlTour"><a href="KmlTour.html">KmlTour</a></li><li data-name="KmlTourFlyTo"><a href="KmlTourFlyTo.html">KmlTourFlyTo</a></li><li data-name="KmlTourWait"><a href="KmlTourWait.html">KmlTourWait</a></li><li data-name="Label"><a href="Label.html">Label</a></li><li data-name="LabelCollection"><a href="LabelCollection.html">LabelCollection</a></li><li data-name="LabelGraphics"><a href="LabelGraphics.html">LabelGraphics</a></li><li data-name="LabelStyle"><a href="LabelStyle.html">LabelStyle</a></li><li data-name="LabelVisualizer"><a href="LabelVisualizer.html">LabelVisualizer</a></li><li data-name="LagrangePolynomialApproximation"><a href="LagrangePolynomialApproximation.html">LagrangePolynomialApproximation</a></li><li data-name="LeapSecond"><a href="LeapSecond.html">LeapSecond</a></li><li data-name="LinearApproximation"><a href="LinearApproximation.html">LinearApproximation</a></li><li data-name="LinearSpline"><a href="LinearSpline.html">LinearSpline</a></li><li data-name="loadCRN"><a href="loadCRN.html">loadCRN</a></li><li data-name="loadKTX"><a href="loadKTX.html">loadKTX</a></li><li data-name="MapboxApi"><a href="MapboxApi.html">MapboxApi</a></li><li data-name="MapboxImageryProvider"><a href="MapboxImageryProvider.html">MapboxImageryProvider</a></li><li data-name="MapboxStyleImageryProvider"><a href="MapboxStyleImageryProvider.html">MapboxStyleImageryProvider</a></li><li data-name="MapMode2D"><a href="MapMode2D.html">MapMode2D</a></li><li data-name="MapProjection"><a href="MapProjection.html">MapProjection</a></li><li data-name="Material"><a href="Material.html">Material</a></li><li data-name="MaterialAppearance"><a href="MaterialAppearance.html">MaterialAppearance</a></li><li data-name="MaterialSupport"><a href="MaterialAppearance.module_MaterialSupport.html">MaterialSupport</a></li><li data-name="MaterialProperty"><a href="MaterialProperty.html">MaterialProperty</a></li><li data-name="Math"><a href="Math.html">Math</a></li><li data-name="Matrix2"><a href="Matrix2.html">Matrix2</a></li><li data-name="Matrix3"><a href="Matrix3.html">Matrix3</a></li><li data-name="Matrix4"><a href="Matrix4.html">Matrix4</a></li><li data-name="mergeSort"><a href="mergeSort.html">mergeSort</a></li><li data-name="Model"><a href="Model.html">Model</a></li><li data-name="ModelAnimation"><a href="ModelAnimation.html">ModelAnimation</a></li><li data-name="ModelAnimationCollection"><a href="ModelAnimationCollection.html">ModelAnimationCollection</a></li><li data-name="ModelAnimationLoop"><a href="ModelAnimationLoop.html">ModelAnimationLoop</a></li><li data-name="ModelGraphics"><a href="ModelGraphics.html">ModelGraphics</a></li><li data-name="ModelMaterial"><a href="ModelMaterial.html">ModelMaterial</a></li><li data-name="ModelMesh"><a href="ModelMesh.html">ModelMesh</a></li><li data-name="ModelNode"><a href="ModelNode.html">ModelNode</a></li><li data-name="ModelVisualizer"><a href="ModelVisualizer.html">ModelVisualizer</a></li><li data-name="Moon"><a href="Moon.html">Moon</a></li><li data-name="NavigationHelpButton"><a href="NavigationHelpButton.html">NavigationHelpButton</a></li><li data-name="NavigationHelpButtonViewModel"><a href="NavigationHelpButtonViewModel.html">NavigationHelpButtonViewModel</a></li><li data-name="NearFarScalar"><a href="NearFarScalar.html">NearFarScalar</a></li><li data-name="NeverTileDiscardPolicy"><a href="NeverTileDiscardPolicy.html">NeverTileDiscardPolicy</a></li><li data-name="NodeTransformationProperty"><a href="NodeTransformationProperty.html">NodeTransformationProperty</a></li><li data-name="objectToQuery"><a href="objectToQuery.html">objectToQuery</a></li><li data-name="Occluder"><a href="Occluder.html">Occluder</a></li><li data-name="OpenCageGeocoderService"><a href="OpenCageGeocoderService.html">OpenCageGeocoderService</a></li><li data-name="OpenStreetMapImageryProvider"><a href="OpenStreetMapImageryProvider.html">OpenStreetMapImageryProvider</a></li><li data-name="OrientedBoundingBox"><a href="OrientedBoundingBox.html">OrientedBoundingBox</a></li><li data-name="OrthographicFrustum"><a href="OrthographicFrustum.html">OrthographicFrustum</a></li><li data-name="OrthographicOffCenterFrustum"><a href="OrthographicOffCenterFrustum.html">OrthographicOffCenterFrustum</a></li><li data-name="Packable"><a href="Packable.html">Packable</a></li><li data-name="PackableForInterpolation"><a href="PackableForInterpolation.html">PackableForInterpolation</a></li><li data-name="Particle"><a href="Particle.html">Particle</a></li><li data-name="ParticleBurst"><a href="ParticleBurst.html">ParticleBurst</a></li><li data-name="ParticleEmitter"><a href="ParticleEmitter.html">ParticleEmitter</a></li><li data-name="ParticleSystem"><a href="ParticleSystem.html">ParticleSystem</a></li><li data-name="PathGraphics"><a href="PathGraphics.html">PathGraphics</a></li><li data-name="PathVisualizer"><a href="PathVisualizer.html">PathVisualizer</a></li><li data-name="PeliasGeocoderService"><a href="PeliasGeocoderService.html">PeliasGeocoderService</a></li><li data-name="PerformanceWatchdog"><a href="PerformanceWatchdog.html">PerformanceWatchdog</a></li><li data-name="PerformanceWatchdogViewModel"><a href="PerformanceWatchdogViewModel.html">PerformanceWatchdogViewModel</a></li><li data-name="PerInstanceColorAppearance"><a href="PerInstanceColorAppearance.html">PerInstanceColorAppearance</a></li><li data-name="PerspectiveFrustum"><a href="PerspectiveFrustum.html">PerspectiveFrustum</a></li><li data-name="PerspectiveOffCenterFrustum"><a href="PerspectiveOffCenterFrustum.html">PerspectiveOffCenterFrustum</a></li><li data-name="PinBuilder"><a href="PinBuilder.html">PinBuilder</a></li><li data-name="PixelFormat"><a href="PixelFormat.html">PixelFormat</a></li><li data-name="Plane"><a href="Plane.html">Plane</a></li><li data-name="PlaneGeometry"><a href="PlaneGeometry.html">PlaneGeometry</a></li><li data-name="PlaneGeometryUpdater"><a href="PlaneGeometryUpdater.html">PlaneGeometryUpdater</a></li><li data-name="PlaneGraphics"><a href="PlaneGraphics.html">PlaneGraphics</a></li><li data-name="PlaneOutlineGeometry"><a href="PlaneOutlineGeometry.html">PlaneOutlineGeometry</a></li><li data-name="PointCloudShading"><a href="PointCloudShading.html">PointCloudShading</a></li><li data-name="PointGraphics"><a href="PointGraphics.html">PointGraphics</a></li><li data-name="pointInsideTriangle"><a href="pointInsideTriangle.html">pointInsideTriangle</a></li><li data-name="PointPrimitive"><a href="PointPrimitive.html">PointPrimitive</a></li><li data-name="PointPrimitiveCollection"><a href="PointPrimitiveCollection.html">PointPrimitiveCollection</a></li><li data-name="PointVisualizer"><a href="PointVisualizer.html">PointVisualizer</a></li><li data-name="PolygonGeometry"><a href="PolygonGeometry.html">PolygonGeometry</a></li><li data-name="PolygonGeometryUpdater"><a href="PolygonGeometryUpdater.html">PolygonGeometryUpdater</a></li><li data-name="PolygonGraphics"><a href="PolygonGraphics.html">PolygonGraphics</a></li><li data-name="PolygonHierarchy"><a href="PolygonHierarchy.html">PolygonHierarchy</a></li><li data-name="PolygonOutlineGeometry"><a href="PolygonOutlineGeometry.html">PolygonOutlineGeometry</a></li><li data-name="Polyline"><a href="Polyline.html">Polyline</a></li><li data-name="PolylineArrowMaterialProperty"><a href="PolylineArrowMaterialProperty.html">PolylineArrowMaterialProperty</a></li><li data-name="PolylineCollection"><a href="PolylineCollection.html">PolylineCollection</a></li><li data-name="PolylineColorAppearance"><a href="PolylineColorAppearance.html">PolylineColorAppearance</a></li><li data-name="PolylineDashMaterialProperty"><a href="PolylineDashMaterialProperty.html">PolylineDashMaterialProperty</a></li><li data-name="PolylineGeometry"><a href="PolylineGeometry.html">PolylineGeometry</a></li><li data-name="PolylineGeometryUpdater"><a href="PolylineGeometryUpdater.html">PolylineGeometryUpdater</a></li><li data-name="PolylineGlowMaterialProperty"><a href="PolylineGlowMaterialProperty.html">PolylineGlowMaterialProperty</a></li><li data-name="PolylineGraphics"><a href="PolylineGraphics.html">PolylineGraphics</a></li><li data-name="PolylineMaterialAppearance"><a href="PolylineMaterialAppearance.html">PolylineMaterialAppearance</a></li><li data-name="PolylineOutlineMaterialProperty"><a href="PolylineOutlineMaterialProperty.html">PolylineOutlineMaterialProperty</a></li><li data-name="PolylineVisualizer"><a href="PolylineVisualizer.html">PolylineVisualizer</a></li><li data-name="PolylineVolumeGeometry"><a href="PolylineVolumeGeometry.html">PolylineVolumeGeometry</a></li><li data-name="PolylineVolumeGeometryUpdater"><a href="PolylineVolumeGeometryUpdater.html">PolylineVolumeGeometryUpdater</a></li><li data-name="PolylineVolumeGraphics"><a href="PolylineVolumeGraphics.html">PolylineVolumeGraphics</a></li><li data-name="PolylineVolumeOutlineGeometry"><a href="PolylineVolumeOutlineGeometry.html">PolylineVolumeOutlineGeometry</a></li><li data-name="PositionProperty"><a href="PositionProperty.html">PositionProperty</a></li><li data-name="PositionPropertyArray"><a href="PositionPropertyArray.html">PositionPropertyArray</a></li><li data-name="PostProcessStage"><a href="PostProcessStage.html">PostProcessStage</a></li><li data-name="PostProcessStageCollection"><a href="PostProcessStageCollection.html">PostProcessStageCollection</a></li><li data-name="PostProcessStageComposite"><a href="PostProcessStageComposite.html">PostProcessStageComposite</a></li><li data-name="PostProcessStageLibrary"><a href="PostProcessStageLibrary.html">PostProcessStageLibrary</a></li><li data-name="PostProcessStageSampleMode"><a href="PostProcessStageSampleMode.html">PostProcessStageSampleMode</a></li><li data-name="Primitive"><a href="Primitive.html">Primitive</a></li><li data-name="PrimitiveCollection"><a href="PrimitiveCollection.html">PrimitiveCollection</a></li><li data-name="PrimitiveType"><a href="PrimitiveType.html">PrimitiveType</a></li><li data-name="ProjectionPicker"><a href="ProjectionPicker.html">ProjectionPicker</a></li><li data-name="ProjectionPickerViewModel"><a href="ProjectionPickerViewModel.html">ProjectionPickerViewModel</a></li><li data-name="Property"><a href="Property.html">Property</a></li><li data-name="PropertyArray"><a href="PropertyArray.html">PropertyArray</a></li><li data-name="PropertyBag"><a href="PropertyBag.html">PropertyBag</a></li><li data-name="ProviderViewModel"><a href="ProviderViewModel.html">ProviderViewModel</a></li><li data-name="QuadraticRealPolynomial"><a href="QuadraticRealPolynomial.html">QuadraticRealPolynomial</a></li><li data-name="QuantizedMeshTerrainData"><a href="QuantizedMeshTerrainData.html">QuantizedMeshTerrainData</a></li><li data-name="QuarticRealPolynomial"><a href="QuarticRealPolynomial.html">QuarticRealPolynomial</a></li><li data-name="Quaternion"><a href="Quaternion.html">Quaternion</a></li><li data-name="QuaternionSpline"><a href="QuaternionSpline.html">QuaternionSpline</a></li><li data-name="queryToObject"><a href="queryToObject.html">queryToObject</a></li><li data-name="Queue"><a href="Queue.html">Queue</a></li><li data-name="Ray"><a href="Ray.html">Ray</a></li><li data-name="Rectangle"><a href="Rectangle.html">Rectangle</a></li><li data-name="RectangleGeometry"><a href="RectangleGeometry.html">RectangleGeometry</a></li><li data-name="RectangleGeometryUpdater"><a href="RectangleGeometryUpdater.html">RectangleGeometryUpdater</a></li><li data-name="RectangleGraphics"><a href="RectangleGraphics.html">RectangleGraphics</a></li><li data-name="RectangleOutlineGeometry"><a href="RectangleOutlineGeometry.html">RectangleOutlineGeometry</a></li><li data-name="ReferenceFrame"><a href="ReferenceFrame.html">ReferenceFrame</a></li><li data-name="ReferenceProperty"><a href="ReferenceProperty.html">ReferenceProperty</a></li><li data-name="Request"><a href="Request.html">Request</a></li><li data-name="requestAnimationFrame"><a href="requestAnimationFrame.html">requestAnimationFrame</a></li><li data-name="RequestErrorEvent"><a href="RequestErrorEvent.html">RequestErrorEvent</a></li><li data-name="RequestState"><a href="RequestState.html">RequestState</a></li><li data-name="RequestType"><a href="RequestType.html">RequestType</a></li><li data-name="Resource"><a href="Resource.html">Resource</a></li><li data-name="Rotation"><a href="Rotation.html">Rotation</a></li><li data-name="RuntimeError"><a href="RuntimeError.html">RuntimeError</a></li><li data-name="SampledPositionProperty"><a href="SampledPositionProperty.html">SampledPositionProperty</a></li><li data-name="SampledProperty"><a href="SampledProperty.html">SampledProperty</a></li><li data-name="sampleTerrain"><a href="sampleTerrain.html">sampleTerrain</a></li><li data-name="sampleTerrainMostDetailed"><a href="sampleTerrainMostDetailed.html">sampleTerrainMostDetailed</a></li><li data-name="Scene"><a href="Scene.html">Scene</a></li><li data-name="SceneMode"><a href="SceneMode.html">SceneMode</a></li><li data-name="SceneModePicker"><a href="SceneModePicker.html">SceneModePicker</a></li><li data-name="SceneModePickerViewModel"><a href="SceneModePickerViewModel.html">SceneModePickerViewModel</a></li><li data-name="SceneTransforms"><a href="SceneTransforms.html">SceneTransforms</a></li><li data-name="ScreenSpaceCameraController"><a href="ScreenSpaceCameraController.html">ScreenSpaceCameraController</a></li><li data-name="ScreenSpaceEventHandler"><a href="ScreenSpaceEventHandler.html">ScreenSpaceEventHandler</a></li><li data-name="ScreenSpaceEventType"><a href="ScreenSpaceEventType.html">ScreenSpaceEventType</a></li><li data-name="SelectionIndicator"><a href="SelectionIndicator.html">SelectionIndicator</a></li><li data-name="SelectionIndicatorViewModel"><a href="SelectionIndicatorViewModel.html">SelectionIndicatorViewModel</a></li><li data-name="ShadowMap"><a href="ShadowMap.html">ShadowMap</a></li><li data-name="ShadowMode"><a href="ShadowMode.html">ShadowMode</a></li><li data-name="ShowGeometryInstanceAttribute"><a href="ShowGeometryInstanceAttribute.html">ShowGeometryInstanceAttribute</a></li><li data-name="Simon1994PlanetaryPositions"><a href="Simon1994PlanetaryPositions.html">Simon1994PlanetaryPositions</a></li><li data-name="SimplePolylineGeometry"><a href="SimplePolylineGeometry.html">SimplePolylineGeometry</a></li><li data-name="SingleTileImageryProvider"><a href="SingleTileImageryProvider.html">SingleTileImageryProvider</a></li><li data-name="SkyAtmosphere"><a href="SkyAtmosphere.html">SkyAtmosphere</a></li><li data-name="SkyBox"><a href="SkyBox.html">SkyBox</a></li><li data-name="SphereEmitter"><a href="SphereEmitter.html">SphereEmitter</a></li><li data-name="SphereGeometry"><a href="SphereGeometry.html">SphereGeometry</a></li><li data-name="SphereOutlineGeometry"><a href="SphereOutlineGeometry.html">SphereOutlineGeometry</a></li><li data-name="Spherical"><a href="Spherical.html">Spherical</a></li><li data-name="Spline"><a href="Spline.html">Spline</a></li><li data-name="StencilFunction"><a href="StencilFunction.html">StencilFunction</a></li><li data-name="StencilOperation"><a href="StencilOperation.html">StencilOperation</a></li><li data-name="StripeMaterialProperty"><a href="StripeMaterialProperty.html">StripeMaterialProperty</a></li><li data-name="StripeOrientation"><a href="StripeOrientation.html">StripeOrientation</a></li><li data-name="StyleExpression"><a href="StyleExpression.html">StyleExpression</a></li><li data-name="subdivideArray"><a href="subdivideArray.html">subdivideArray</a></li><li data-name="Sun"><a href="Sun.html">Sun</a></li><li data-name="SvgPathBindingHandler"><a href="SvgPathBindingHandler.html">SvgPathBindingHandler</a></li><li data-name="TaskProcessor"><a href="TaskProcessor.html">TaskProcessor</a></li><li data-name="TerrainData"><a href="TerrainData.html">TerrainData</a></li><li data-name="TerrainProvider"><a href="TerrainProvider.html">TerrainProvider</a></li><li data-name="TextureMagnificationFilter"><a href="TextureMagnificationFilter.html">TextureMagnificationFilter</a></li><li data-name="TextureMinificationFilter"><a href="TextureMinificationFilter.html">TextureMinificationFilter</a></li><li data-name="TileAvailability"><a href="TileAvailability.html">TileAvailability</a></li><li data-name="TileCoordinatesImageryProvider"><a href="TileCoordinatesImageryProvider.html">TileCoordinatesImageryProvider</a></li><li data-name="TileDiscardPolicy"><a href="TileDiscardPolicy.html">TileDiscardPolicy</a></li><li data-name="TileMapServiceImageryProvider"><a href="TileMapServiceImageryProvider.html">TileMapServiceImageryProvider</a></li><li data-name="TileProviderError"><a href="TileProviderError.html">TileProviderError</a></li><li data-name="TilingScheme"><a href="TilingScheme.html">TilingScheme</a></li><li data-name="TimeDynamicImagery"><a href="TimeDynamicImagery.html">TimeDynamicImagery</a></li><li data-name="TimeDynamicPointCloud"><a href="TimeDynamicPointCloud.html">TimeDynamicPointCloud</a></li><li data-name="TimeInterval"><a href="TimeInterval.html">TimeInterval</a></li><li data-name="TimeIntervalCollection"><a href="TimeIntervalCollection.html">TimeIntervalCollection</a></li><li data-name="TimeIntervalCollectionPositionProperty"><a href="TimeIntervalCollectionPositionProperty.html">TimeIntervalCollectionPositionProperty</a></li><li data-name="TimeIntervalCollectionProperty"><a href="TimeIntervalCollectionProperty.html">TimeIntervalCollectionProperty</a></li><li data-name="Timeline"><a href="Timeline.html">Timeline</a></li><li data-name="TimeStandard"><a href="TimeStandard.html">TimeStandard</a></li><li data-name="ToggleButtonViewModel"><a href="ToggleButtonViewModel.html">ToggleButtonViewModel</a></li><li data-name="Transforms"><a href="Transforms.html">Transforms</a></li><li data-name="TranslationRotationScale"><a href="TranslationRotationScale.html">TranslationRotationScale</a></li><li data-name="TridiagonalSystemSolver"><a href="TridiagonalSystemSolver.html">TridiagonalSystemSolver</a></li><li data-name="TrustedServers"><a href="TrustedServers.html">TrustedServers</a></li><li data-name="UrlTemplateImageryProvider"><a href="UrlTemplateImageryProvider.html">UrlTemplateImageryProvider</a></li><li data-name="VelocityOrientationProperty"><a href="VelocityOrientationProperty.html">VelocityOrientationProperty</a></li><li data-name="VelocityVectorProperty"><a href="VelocityVectorProperty.html">VelocityVectorProperty</a></li><li data-name="VertexFormat"><a href="VertexFormat.html">VertexFormat</a></li><li data-name="VerticalOrigin"><a href="VerticalOrigin.html">VerticalOrigin</a></li><li data-name="VideoSynchronizer"><a href="VideoSynchronizer.html">VideoSynchronizer</a></li><li data-name="Viewer"><a href="Viewer.html">Viewer</a></li><li data-name="viewerCesium3DTilesInspectorMixin"><a href="viewerCesium3DTilesInspectorMixin.html">viewerCesium3DTilesInspectorMixin</a></li><li data-name="viewerCesiumInspectorMixin"><a href="viewerCesiumInspectorMixin.html">viewerCesiumInspectorMixin</a></li><li data-name="viewerDragDropMixin"><a href="viewerDragDropMixin.html">viewerDragDropMixin</a></li><li data-name="viewerPerformanceWatchdogMixin"><a href="viewerPerformanceWatchdogMixin.html">viewerPerformanceWatchdogMixin</a></li><li data-name="ViewportQuad"><a href="ViewportQuad.html">ViewportQuad</a></li><li data-name="Visibility"><a href="Visibility.html">Visibility</a></li><li data-name="Visualizer"><a href="Visualizer.html">Visualizer</a></li><li data-name="VRButton"><a href="VRButton.html">VRButton</a></li><li data-name="VRButtonViewModel"><a href="VRButtonViewModel.html">VRButtonViewModel</a></li><li data-name="VRTheWorldTerrainProvider"><a href="VRTheWorldTerrainProvider.html">VRTheWorldTerrainProvider</a></li><li data-name="WallGeometry"><a href="WallGeometry.html">WallGeometry</a></li><li data-name="WallGeometryUpdater"><a href="WallGeometryUpdater.html">WallGeometryUpdater</a></li><li data-name="WallGraphics"><a href="WallGraphics.html">WallGraphics</a></li><li data-name="WallOutlineGeometry"><a href="WallOutlineGeometry.html">WallOutlineGeometry</a></li><li data-name="WebGLConstants"><a href="WebGLConstants.html">WebGLConstants</a></li><li data-name="WebMapServiceImageryProvider"><a href="WebMapServiceImageryProvider.html">WebMapServiceImageryProvider</a></li><li data-name="WebMapTileServiceImageryProvider"><a href="WebMapTileServiceImageryProvider.html">WebMapTileServiceImageryProvider</a></li><li data-name="WebMercatorProjection"><a href="WebMercatorProjection.html">WebMercatorProjection</a></li><li data-name="WebMercatorTilingScheme"><a href="WebMercatorTilingScheme.html">WebMercatorTilingScheme</a></li><li data-name="WeightSpline"><a href="WeightSpline.html">WeightSpline</a></li><li data-name="WindingOrder"><a href="WindingOrder.html">WindingOrder</a></li><li data-name="writeTextToCanvas"><a href="writeTextToCanvas.html">writeTextToCanvas</a></li></ul>
+    </div>
+</div>
+
+<script>
+if (window.frameElement) {
+    document.body.className = 'embedded';
+
+    var ele = document.createElement('a');
+    ele.className = 'popout';
+    ele.target = '_blank';
+    ele.href = window.location.href;
+    ele.title = 'Pop out';
+    document.getElementById('main').appendChild(ele);
+}
+
+// Set targets on external links.  Sandcastle and GitHub shouldn't be embedded in any iframe.
+Array.prototype.forEach.call(document.getElementsByTagName('a'), function(a) {
+    if (/^https?:/i.test(a.getAttribute('href'))) {
+        a.target='_blank';
+    }
+});
+</script>
+
+<script src="javascript/prism.js"></script>
+<script src="javascript/cesiumDoc.js"></script>
+
+</body>
+</html> 
